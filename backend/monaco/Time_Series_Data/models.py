@@ -36,8 +36,6 @@ plt.rcParams['axes.unicode_minus'] = False
 
 '''
 
-
-
 # class Entity(FileDTO, Printer, Reader, Scraper):
 #     pass
 
@@ -61,7 +59,7 @@ class DataService(Reader):
         file.context = './data/'
         file.fname = '08. PinkWink Web Traffic'
 
-        df = reader.csv(file,header=None)
+        df = reader.csv_header(file,header=None) # common.models.py 수정필요!
         df.columns = ['date','hit']
         df = df[df['hit'].notnull()]
         print(df.head())
@@ -224,7 +222,7 @@ class DataService(Reader):
         file.context = './data/'
         file.fname = '08. example_wp_R'
 
-        df = reader.csv(file, header=0)
+        df = reader.csv_header(file, header=0)
         df['y'] = np.log(df['y'])  # 로그 변환
         df['cap'] = 8.5  # 예측 값의 상한을 8.5로 설정
         df.head()
@@ -248,7 +246,7 @@ class DataService(Reader):
 
         file.context = './data/'
         file.fname = '08. example_wp_peyton_manning'
-        df = reader.csv(file, header=0)
+        df = reader.csv_header(file, header=0)
 
         df['y'] = np.log(df['y'])  # 로그 변환
         m = Prophet(daily_seasonality=True)

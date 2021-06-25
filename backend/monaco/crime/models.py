@@ -1,5 +1,5 @@
 from django.db import models
-from admin.common.models import FileDTO,PrinterBase, ReaderBase, ScraperBase, Printer, Reader, Scraper
+from monaco.common.models import FileDTO,PrinterBase, ReaderBase, ScraperBase, Printer, Reader, Scraper
 import pandas as pd
 import numpy as np
 from sklearn import preprocessing
