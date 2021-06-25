@@ -1,5 +1,5 @@
 from django.db import models
-from monaco.common.models import FileDTO, Printer, Reader, Scraper
+from backend.monaco.common.models import FileDTO, Printer, Reader, Scraper
 import pandas as pd
 import numpy as np
 import warnings
@@ -271,10 +271,9 @@ class DataService(Reader):
 
 if __name__ == '__main__':
     service = DataService()
-    df = service.regression()
-    service.forecast(df=df)
-
-    # service.seasonal()
+    # df = service.regression()
+    # service.forecast(df=df)
+    service.seasonal()
     # service.growth_model()
     # service.holiday_forecast()
 
