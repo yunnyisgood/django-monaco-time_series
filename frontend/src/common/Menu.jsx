@@ -18,27 +18,34 @@ export const ItemMenu = () => (
         <ol>
            <li><Link to='/item-list'>아이템목록</Link></li> 
            <li><Link to='/item-register'>아이템등록</Link></li> 
+           <li><Link to='/item-retrieve'>아이템조회</Link></li> 
            <li><Link to='/item-detail'>아이템 상세</Link></li> 
-           <li><Link to='/item-remove'>아이템 삭제</Link></li> 
+           <li><Link to='/item-update'>아이템 수정</Link></li> 
+           <li><Link to='/item-delete'>아이템 삭제</Link></li> 
         </ol>
     </nav>
 )
 
-export const ArticleMenu = () => (
+export const BlogMenu = () => (
     <nav>
         <ol>
-            <li><Link to='/article-list'>게시물 목록</Link></li> 
-            <li><Link to='/article-write'>게시물 작성</Link></li> 
-            <li><Link to='/article-read'>게시물 상세</Link></li> 
-            <li><Link to='/article-remove'>게시물 삭제</Link></li> 
+            <li><Link to='/post-list'>게시물 목록</Link></li> 
+            <li><Link to='/post-write'>게시물 작성</Link></li> 
+            <li><Link to='/post-retrieve'>게시물 상세</Link></li> 
+            <li><Link to='/post-update'>게시물 수정</Link></li> 
+            <li><Link to='/post-delete'>게시물 삭제</Link></li> 
         </ol>
     </nav>
 )
 
-export const TodosMenu = () => (
+export const StockMenu = () => (
     <nav>
         <ol>
-            <li><Link to='/todos'>할일 작성 및 출력</Link></li>
+            <li><Link to='/stock-list'>주식 목록</Link></li> 
+            <li><Link to='/stock-register'>주식 등록</Link></li> 
+            <li><Link to='/stock-retrieve'>주식 상세</Link></li> 
+            <li><Link to='/stock-update'>주식 수정</Link></li> 
+            <li><Link to='/stock-delete'>주식 삭제</Link></li> 
         </ol>
     </nav>
 )

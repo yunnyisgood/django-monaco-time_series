@@ -1,23 +1,58 @@
-import React from 'react'
-import styled from 'styled-components';
+import React, { useState } from 'react'
 import './Signup.css'
 
+
 const SignUp = () => {
+  const [userInfo, setUserInfo] = useState({
+    username: '',
+    password: '',
+    name:'',
+    email:''
+
+  })
+
+  const {username, password, name,email} = userInfo
+
+  const handleChange = e => {
+
+    const {name, value} = e.target
+    setUserInfo({
+      ...userInfo,
+      [name]:value
+    }) 
+
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    alert(`전송 클릭: ${JSON.stringify({...userInfo})}`)
+  }
+
+  const handleClick = e => {
+    e.preventDefault()
+    alert('삭제')
+
+  }
+
     return (<>
-    <form action="/action_page.php" style={{border:"1px solid #ccc"}}>
+    <div className="Signup">
+    <form onSubmit={handleSubmit} method="POST" style={{border:"1px solid #ccc"}}>
   <div className="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr/>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required/>
+    <label for="username"><b>username</b></label>
+    <input type="text" placeholder="Enter ID" onChange={handleChange} name="username" value={username} />
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required/>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" onChange={handleChange} name="password" value={password}/>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
+    <label for="name"><b>name</b></label>
+    <input type="text" placeholder="Enter your name" onChange={handleChange} name="name" value={name} />
+
+    <label for="email"><b>email</b></label>
+    <input type="text" placeholder="Enter your email" onChange={handleChange} name="email" value={email}/>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style={{marginBottom:"15px"}}/> Remember me
@@ -26,11 +61,12 @@ const SignUp = () => {
     <p>By creating an account you agree to our <a href="#" style={{color:"dodgerblue"}}>Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="button" class="cancelbtn" onClick={handleClick}>Cancel</button>
     </div>
   </div>
 </form>
+</div>
     </>)
 }
 

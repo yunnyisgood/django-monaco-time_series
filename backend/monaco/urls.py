@@ -17,5 +17,5 @@ from django.contrib import admin
 from django.urls import path
 from .common.views import Hello
 urlpatterns = [
-    path('hello', Hello.as_view()),
+    path('connection', Hello.as_view()),
 ]
