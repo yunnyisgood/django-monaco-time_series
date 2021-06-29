@@ -35,8 +35,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'monaco.member',
-    'monaco.board'
+    'member',
+    'board',
+    'chicago',
+    'gas_station',
+    'common',
+    'crime',
+    'election',
+    'monaco',
+    'nl_prcs',
+    'population',
+    'time_series'
 ]
 
 MIDDLEWARE = [
@@ -76,7 +85,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'root',
         'USER': 'root',
         'PASSWORD': 'root',
@@ -108,15 +117,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

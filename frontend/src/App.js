@@ -4,7 +4,6 @@ import {Home, User, Blog, Item, Stock} from './templates'
 import {Nav} from './common'
 import { Redirect, Route} from "react-router-dom"
 import {BrowserRouter as Router} from 'react-router-dom'
-import { Link } from 'react-router-dom'
 
 
 
