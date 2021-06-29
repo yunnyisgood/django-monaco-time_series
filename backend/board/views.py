@@ -10,7 +10,7 @@ from rest_framework.response import Response
 class Auth(APIView):
 
     @csrf_exempt
-    def get(request):
+    def get(self,request):
         serializer = BoardSerializers(data=request)
         if serializer.is_valid():
             serializer.save()
