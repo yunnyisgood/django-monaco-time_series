@@ -16,15 +16,14 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers
-
-from board.views import Auth
-from common.views import Hello
+from common.views import Connection
 
 router = routers.DefaultRouter()
 
 urlpatterns = [
-    path('connection', Hello.as_view()),
+
+    path('connection', Connection.as_view()),
     path('board', include('board.urls')),
-    url(r'^member', Auth.as_view())  # ^member -> member로 시작하면
+    path('member', include('member.urls'))  # member로 가서 member.urls.py를 찾으라는 의미
 
 ]

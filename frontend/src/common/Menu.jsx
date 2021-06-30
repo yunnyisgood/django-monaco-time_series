@@ -26,7 +26,7 @@ export const ItemMenu = () => (
     </nav>
 )
 
-export const BlogMenu = () => (
+export const BoardMenu = () => (
     <nav>
         <ol>
             <li><Link to='/post-list'>게시물 목록</Link></li> 

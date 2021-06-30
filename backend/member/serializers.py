@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from member.models import Member
+from member.models import MemberVO as member
 
 
 class MemberSerializers(serializers.Serializer):
@@ -9,11 +9,13 @@ class MemberSerializers(serializers.Serializer):
     name = serializers.CharField()
     email = serializers.EmailField()
 
+    class Meta: # DB와 연결되는 클래스 -> 관리자 역할을 Django가 하도록.
+        managed = member
+        fields = '__all__'
+
     def create(self, validated_data):
-        """
-        Create and return a new `Snippet` instance, given the validated data.
-        """
-        return Member.objects.create(**validated_data)
+
+        return member.objects.create(**validated_data)
 
     # def update(self, instance, validated_data):
     #     """
@@ -25,6 +27,7 @@ class MemberSerializers(serializers.Serializer):
     #     instance.email = validated_data.get('email', instance.email)
     #     instance.save()
     #     return instance
+
 
 
 

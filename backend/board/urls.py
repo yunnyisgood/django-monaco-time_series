@@ -1,6 +1,8 @@
 from django.urls import path
-from . import views
+from .views import POSTS
 
 urlpatterns = [
-    path('', views.BoardSerializers),
-]
+
+    path('/write', POSTS.as_view())
+
+    ]

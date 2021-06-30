@@ -14,7 +14,6 @@ const Home = ({children}) => {
         }).then(function (res) {
             setConnection(res.data.connection === "SUCCESS")
         });
-        
     }
     
     
@@ -27,7 +26,7 @@ const Home = ({children}) => {
          : 
          "연결상태가 아닙니다"
           }</td></tr>
-        
+                             
     </table>
     {children}
 
