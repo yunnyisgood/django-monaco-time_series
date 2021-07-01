@@ -3,6 +3,6 @@ from .views import POSTS
 
 urlpatterns = [
 
-    path('/write', POSTS.as_view())
+    path('/register', POSTS.as_view())
 
     ]

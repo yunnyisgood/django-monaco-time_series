@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import {  userLogin } from '../../api'
-import './Login.css'
+import {  memberLogin } from '../../api'
+import '../styles/MemberLogin.css'
 import {useHistory} from 'react-router'
 
-const Login = () => {
+const MemberLogin = () => {
 
   const [login, setLogin] = useState({
     username: '',
@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = e => {
     e.preventDefault()
     alert(`전송 클릭: ${JSON.stringify({...login})}`)
-    userLogin({...login})
+    memberLogin({...login})
     .then((res) => {
        alert(`로그인 완료 : ${res.data.result}`)
       //  history.push('login')
@@ -45,7 +45,7 @@ const Login = () => {
 
     return (<>
     <div className="Login">
-    <form method="get" onSubmit={handleSubmit}>
+    <form method="post" onSubmit={handleSubmit}>
   <div className="imgcontainer">
     <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar"/>
   </div>
@@ -71,4 +71,4 @@ const Login = () => {
 </div>
     </>)
 }
-export default Login
+export default MemberLogin

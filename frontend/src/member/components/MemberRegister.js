@@ -1,11 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import {  userSignup } from '../../api'
-import './Signup.css'
+import { memberRegister } from '../../api'
+import '../styles/MemberRegister.css'
 import {useHistory} from 'react-router'
 
 
-const SignUp = () => {
+const MemberRegister = () => {
 
   const history = useHistory()
   const [userInfo, setUserInfo] = useState({
@@ -21,7 +21,7 @@ const SignUp = () => {
   const handleSubmit = e => {
     e.preventDefault()
     alert(`전송 클릭: ${JSON.stringify({...userInfo})}`)
-    userSignup({...userInfo})
+    memberRegister({...userInfo})
     .then(res => {
        alert(`회원가입 완료 : ${res.data.result}`)
       //  history.push('login')
@@ -85,4 +85,4 @@ const SignUp = () => {
 
 
 
-export default SignUp
+export default MemberRegister

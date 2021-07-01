@@ -18,12 +18,12 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from common.views import Connection
 
-router = routers.DefaultRouter()
+# router = routers.DefaultRouter()
 
 urlpatterns = [
-
     path('connection', Connection.as_view()),
-    path('board', include('board.urls')),
-    path('member', include('member.urls'))  # member로 가서 member.urls.py를 찾으라는 의미
+    url(r'^api/member/', include('member.urls')),
+    url(r'^api/board/', include('board.urls')),
+    url(r'^adm/member/', include('member.urls')),
 
 ]

@@ -1,14 +1,15 @@
 from django.urls import path
-from .views import Members as members
-from .views import Member as member
-from rest_framework.urlpatterns import format_suffix_patterns
+from member import views
+# from .views import Members as members
+# from .views import Member as member
+from django.conf.urls import url
 
 urlpatterns = [
-    path('/signup', members.as_view()),
-    path('/login/<str:pk>/', member.as_view())
+    url(r'^register', views.members),
+    url(r'^list', views.members),
+
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
 
 
 

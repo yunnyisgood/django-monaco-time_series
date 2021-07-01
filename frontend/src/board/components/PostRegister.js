@@ -1,12 +1,12 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import {  postWrite  } from '../../api'
-import './PostWrite.css'
+import {  postRegister  } from '../../api'
+import '../styles/PostRegister.css'
 import {useHistory} from 'react-router'
 import {Button} from '@material-ui/core'
 
 
-const PostWrite = () => {
+const PostRegister = () => {
 
     const [postInfo, setPostInfo] = useState({
         title: '',
@@ -20,7 +20,7 @@ const PostWrite = () => {
     const handleSubmit = e => {
         e.preventDefault()
         alert(`전송 클릭: ${JSON.stringify({...postInfo})}`)
-        postWrite({...postInfo})
+        postRegister({...postInfo})
         .then(res => {
            alert(`작성 완료 : ${res.data.result}`)
           //  history.push('login')
@@ -75,4 +75,4 @@ const PostWrite = () => {
 
 
 
-export default PostWrite
+export default PostRegister
