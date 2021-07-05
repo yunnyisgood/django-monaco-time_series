@@ -3,14 +3,13 @@ import redux from 'redux'
 const SERVER = 'http://127.0.0.1:8000/'
 const headers = {'Content-Type':'application/json'}
 
-export const memberRegister = body => axios.post(`${SERVER}api/member/register`, {headers, body})
+export const memberDetail = id => axios.get(`${SERVER}api/member/detail/${id}`)
+export const memberDelete = body => axios.delete(`${SERVER}api/member/delete`,{headers, body})
 export const memberList = () => axios.get(`${SERVER}adm/member/list`)
-export const memberLogin = body => axios.post(`${SERVER}member/login`, {headers, body})
-// export const userLogin = loginRequest => axios.get(`${SERVER}member/login/${loginRequest.username}/`, loginRequest)
-export const memberDelete = body => axios.post(`${SERVER}api/member/delete`, {headers, body})
-export const memberModify = body => axios.post(`${SERVER}api/member/modify`, {headers, body})
-export const memberDetail = body => axios.post(`${SERVER}api/member/detail`, {headers, body})
-export const memberRetrieve = body => axios.post(`${SERVER}member/retrieve`, {headers, body})
+export const memberLogin = body => axios.post(`${SERVER}api/member/login`,{headers, body})
+export const memberModify = body => axios.put(`${SERVER}api/member/modify`,{headers, body})
+export const memberRegister = body => axios.post(`${SERVER}api/member/register`,{headers, body})
+export const memberRetrieve = name => axios.get(`${SERVER}adm/member/retrieve/${name}`)
 
 /* Board */
 export const postDetail = body => axios.post(`${SERVER}api/board/detail`,{headers, body})

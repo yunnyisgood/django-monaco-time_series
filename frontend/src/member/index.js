@@ -1,10 +1,17 @@
-export {default as MemberLogin} from './components/MemberLogin'
-export {default as MemberRegister} from './components/MemberRegister'
-export {default as MemberDetail} from './components/MemberDetail'
-export {default as MemberModify} from './components/MemberModify'
-export {default as MemberList} from './components/MemberList'
-export {default as MemberRetrieve} from './components/MemberRetrieve'
-export {default as MemberDelete} from './components/MemberDelete'
+export {default as MemberLogin} from './pages/MemberLogin'
+export {default as MemberRegister} from './pages/MemberRegister'
+export {default as MemberDetail} from './pages/MemberDetail'
+export {default as MemberModify} from './pages/MemberModify'
+export {default as MemberList} from './pages/MemberList'
+
+export {default as MemberRetrieve} from './components/MemberRetrieveForm'
+export {default as MemberDelete} from './components/MemberDeleteForm'
+export {default as MemberDetailComponent} from './components/MemberDetailComponent'
+export {default as MemberListComponent} from './components/MemberListComponent'
+export {default as MemberLoginForm} from './components/MemberLoginForm'
+export {default as MemberModifyForm} from './components/MemberModifyForm'
+export {default as MemberNav} from './components/MemberNav'
+export {default as MemberRegisterForm} from './components/MemberRegisterForm'
 
 
 

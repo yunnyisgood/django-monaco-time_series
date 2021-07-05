@@ -4,28 +4,37 @@ import {  memberLogin } from '../../api'
 import '../styles/MemberLogin.css'
 import {useHistory} from 'react-router'
 
-const MemberLogin = () => {
-
+const MemberLoginForm = () => {
+  const history = useHistory()
   const [login, setLogin] = useState({
     username: '',
     password: '',
 
   })
 
-  const {username, password} = login
+  const {username, password} = `login`
 
   const handleSubmit = e => {
     e.preventDefault()
-    alert(`전송 클릭: ${JSON.stringify({...login})}`)
     memberLogin({...login})
-    .then((res) => {
-       alert(`로그인 완료 : ${res.data.result}`)
-      //  history.push('login')
+    .then(res => {
+      if(res.data.result == 'PASSWORD-FAILED'){
+        alert(`비밀번호가 틀립니다`) 
+        document.getElementById("username").value = ""
+        document.getElementById("password").value = "" 
+      }else if(res.data.result == 'USERNAME-FAIL'){
+        alert(`아이디가 틀립니다`)
+      }else{
+        alert('로그인 성공')
+        localStorage.setItem("loginedMember", JSON.stringify(res.data))
+        history.push('/member-list')
+
+      }
     })
     .catch(err => {
-      alert(`로그인 실패 : ${err }`)
+      alert(`로그인 실패 : ${err} `)
     })
-    }
+  }
 
   const handleClick = e => {
     e.preventDefault()
@@ -71,4 +80,4 @@ const MemberLogin = () => {
 </div>
     </>)
 }
-export default MemberLogin
+export default MemberLoginForm

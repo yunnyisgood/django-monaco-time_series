@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/MemberRetrieve.css'
 
-const MemberRetrieve = () => {
+const MemberRetrieveForm = () => {
     return (<></>)
 }
 
-export default MemberRetrieve
+export default MemberRetrieveForm

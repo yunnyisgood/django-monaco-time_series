@@ -5,7 +5,7 @@ import '../styles/MemberRegister.css'
 import {useHistory} from 'react-router'
 
 
-const MemberRegister = () => {
+const MemberRegisterForm = () => {
 
   const history = useHistory()
   const [userInfo, setUserInfo] = useState({
@@ -85,4 +85,4 @@ const MemberRegister = () => {
 
 
 
-export default MemberRegister
+export default MemberRegisterForm

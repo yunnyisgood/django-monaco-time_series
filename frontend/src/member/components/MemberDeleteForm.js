@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/MemberDelete.css'
 
-const MemberDelete = () => {
+const MemberDeleteForm = () => {
     return (<></>)
 }
 
-export default MemberDelete
+export default MemberDeleteForm
