@@ -23,11 +23,11 @@ const MemberRegisterForm = () => {
     alert(`전송 클릭: ${JSON.stringify({...userInfo})}`)
     memberRegister({...userInfo})
     .then(res => {
-       alert(`회원가입 완료 : ${res.data.result}`)
+       alert(`WELCOME ${res.data.username}!`)
       //  history.push('login')
     })
     .catch(err => {
-      alert(`회원가입 실패 : ${err }`)
+      alert(`회원가입 실패 : ${err}`)
     })
     }
 

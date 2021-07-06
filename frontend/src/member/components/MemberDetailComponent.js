@@ -7,14 +7,14 @@ const MemberDetailComponent = () => {
 
 
   useEffect(() => {
-    setMember(JSON.parse(localStorage.getItem("selectedMember")))
+    setMember(JSON.parse(localStorage.getItem("loginedMember")))
   }, {})
 
   return (<>
             <div className="member-detail-card">
               <h2 style={{"text-align":"center"}}>회원 정보</h2>
               <img src="https://www.w3schools.com/w3images/team2.jpg"  style={{"width":"100%"}}/>
-              <h1>{member.name}</h1>
+              <h1>{member.username}</h1>
                   <p className="member-detail-title">CEO & Founder, Example</p>
                   <p>Harvard University</p>
                   <div style={{"margin": "24px 0"}}>

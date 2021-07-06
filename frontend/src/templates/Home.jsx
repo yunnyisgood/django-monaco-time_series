@@ -18,7 +18,7 @@ const Home = ({children}) => {
         });
     }
     return (<>
-    {/* <Nav/> */}
+    <Nav/>
         <table style={{width: '100%', height: '100%'}}>
         <tr><td colSpan={2} ><h2 style={{textAlign: 'center'}}>Home</h2></td></tr>
         <tr>

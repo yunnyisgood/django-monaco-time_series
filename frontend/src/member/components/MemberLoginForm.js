@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useState } from 'react'
 import {  memberLogin } from '../../api'
 import '../styles/MemberLogin.css'

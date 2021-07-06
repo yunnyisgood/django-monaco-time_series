@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import '../styles/MemberList.css'
 import { MemberListComponent } from '..'
 import { MemberMenu as Menu } from '../../common' 
